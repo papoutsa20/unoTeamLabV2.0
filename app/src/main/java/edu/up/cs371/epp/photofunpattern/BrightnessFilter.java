@@ -23,12 +23,44 @@ public class BrightnessFilter extends PhotoFilter {
     * @param inPixel is a 32 bit pixel that contains RGB color values
     * @return a new Pixel in which each of the RGB components has been increased
     */
-    public int transformPixel(int inPixel) {
-        int red = constrain(Color.red(inPixel) + ADJUSTMENT);
-        int green = constrain(Color.green(inPixel) + ADJUSTMENT);
-        int blue = constrain(Color.blue(inPixel) + ADJUSTMENT);
-        int outPixel = Color.argb(Color.alpha(inPixel), red, green, blue);
-        return outPixel;
+    public int transformPixel(int []inPixel) {
+        int red = 0;
+        int green = 0;
+        int blue = 0;
+        for(int i = 0; i < 9; i++)
+        {
+           if(i == 0 || i ==1 || i==3 || i==6 || i == 7)
+           {
+               red += constrain(Color.red(inPixel[i]) );
+               green += constrain(Color.green(inPixel[i]));
+               blue += constrain(Color.blue(inPixel[i]));
+
+           }
+            else if(i == 2 || i == 5 || i == 8)
+           {
+                red -= constrain(Color.red(inPixel[i]) );
+                green -= constrain(Color.green(inPixel[i]));
+                blue -= constrain(Color.blue(inPixel[i]));
+
+           }
+            else
+           {
+               red = red  -2 * constrain(Color.red(inPixel[i]) );
+               green = green -2 * constrain(Color.green(inPixel[i]));
+               blue = blue  -2 *constrain(Color.blue(inPixel[i]));
+
+           }
+
+        }
+        return Color.argb(255,red,green,blue);
+
+
+
+
+
+
+
+        //return outPixel;
     }
 
 }

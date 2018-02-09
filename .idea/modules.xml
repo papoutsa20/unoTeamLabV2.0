@@ -4,6 +4,8 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/PhotoFunPattern-master.iml" filepath="$PROJECT_DIR$/PhotoFunPattern-master.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/unoTeamLab.iml" filepath="$PROJECT_DIR$/unoTeamLab.iml" />
     </modules>
   </component>
 </project>
